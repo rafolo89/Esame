@@ -38,8 +38,7 @@
 
 <<<<<<< HEAD
 		/*Connessione al server :) */
-		/* weee ciao */
-	/*beeee ciaoooooo*/
+		
 =======
 		/*Connessione al server  */
 >>>>>>> origin/master
