@@ -36,8 +36,12 @@
 <body>
 <?php
 
+<<<<<<< HEAD
 		/*Connessione al server :) */
 		/* weee ciao */
+=======
+		/*Connessione al server  */
+>>>>>>> origin/master
 		$connessione = mysql_connect("localhost", "root", "") or die("Connessione non riuscita");
 		/* Selezione del database */
 		mysql_select_db("my_alumniunisa",$connessione) or die("Selezione del database non riuscita");
@@ -172,7 +176,7 @@
       <div class="col c1">
         <h2>Storie alumni</h2>
      <?php
-        //collegamento al db
+        //collegamento al db :)
         $query = "SELECT * FROM esperienza WHERE moderatore IS NOT NULL ORDER BY DATA DESC";
           $res = mysql_query($query);
         $i=0;
