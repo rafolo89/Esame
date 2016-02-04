@@ -19,7 +19,7 @@
 }
 .style6 {
 	font-size: large;
-}v
+}
 .style7 {
 	background-color: white;
 	margin: 0 auto;
