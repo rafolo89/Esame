@@ -37,7 +37,6 @@
 <?php
 
 		/*Connessione al server :) */
-		/*ma che combinate??*/
 		$connessione = mysql_connect("localhost", "root", "") or die("Connessione non riuscita");
 		/* Selezione del database */
 		mysql_select_db("my_alumniunisa",$connessione) or die("Selezione del database non riuscita");
