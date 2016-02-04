@@ -34,7 +34,7 @@
 }
  </style>
 </head>
-<body><!--Corpo della pagina-->
+<body><!--Corpo della pagina o di una donna-->
   <div class="style11">
   <?php 
     if (!isset($_COOKIE['id_utente']) && !isset($_COOKIE['tipo_utente']) && $_COOKIE['tipo_utente']!="alumno"){
