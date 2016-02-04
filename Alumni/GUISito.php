@@ -179,7 +179,7 @@
       <div class="col c1">
         <h2>Storie alumni</h2>
      <?php
-        //collegamento al db
+        //collegamento al db :)
         $query = "SELECT * FROM esperienza WHERE moderatore IS NOT NULL ORDER BY DATA DESC";
           $res = mysql_query($query);
         $i=0;
