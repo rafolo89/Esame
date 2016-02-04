@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <title>AlumniUnisa</title>
@@ -36,7 +36,7 @@
 <body>
 <?php
 
-		/*Connessione al server*/
+		/*Connessione al server :) */
 		$connessione = mysql_connect("localhost", "root", "") or die("Connessione non riuscita");
 		/* Selezione del database */
 		mysql_select_db("my_alumniunisa",$connessione) or die("Selezione del database non riuscita");
