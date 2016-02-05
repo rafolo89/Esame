@@ -36,9 +36,11 @@
 </style>
 
 
+<script src="">
 
+</script>
 </head>
-<body>
+<body onload="stampa(,'../Application/Alumno.php','mod41')">
 <!--Corpo della pagina-->
   
   <div id='mod40'></div>

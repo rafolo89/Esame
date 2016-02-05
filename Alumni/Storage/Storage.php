@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	if(isset($_COOKIE['valore']) && isset($_COOKIE['tipo_utente']) && isset($_COOKIE['file']) && isset($_COOKIE['scelta'])) {
 	
@@ -57,15 +57,10 @@
 			}
 			$sql = $sql . ")";
 			
-			if ($conn->query($sql) === TRUE) {
-				setcookie("valore", 0 , time()+3600);
-				header($_COOKIE['file']);
-			} 
-			else {
-				echo "Error: " . $sql . "<br>" . $conn->error;
-			}
-		
-		
+			$conn->query($sql);
+			setcookie("valore", 0 , time()+3600);
+			setcookie("risultato","1inserimento avvenuto con successo", time()+3600);
+			header($_COOKIE['file']);
 		}
 		
 		/*delete */
@@ -85,14 +80,10 @@
 				$sql = "DELETE FROM '$_COOKIE['tipo_utente']' WHERE ID='$tipo[count($tipo)-1]' ";
 			}
 		
-			if ($conn->query($sql) === TRUE) {
-				setcookie("valore", 0 , time()+3600);
-				header($_COOKIE['file']);
-			} 
-			else {
-				echo "Error: " . $sql . "<br>" . $conn->error;
-			}
-			
+			$conn->query($sql);
+			setcookie("valore", 0 , time()+3600);
+			setcookie("risultato","1cancellazione avvenuta con successo", time()+3600);
+			header($_COOKIE['file']);			
 		
 		}
 		
@@ -113,14 +104,11 @@
 					
 			
 				
-				if ($conn->query($sql) === TRUE) {
-					setcookie("valore", 0 , time()+3600);
-					header($_COOKIE['file']);
-				} 
-				else {
-					echo "Error: " . $sql . "<br>" . $conn->error;
-				}
-			
+				$conn->query($sql);
+				setcookie("valore", 0 , time()+3600);
+				setcookie("risultato","1modifica avvenuta con successo", time()+3600);
+				header($_COOKIE['file']);
+							
 		
 		}
 		
@@ -137,23 +125,19 @@
 			$sql = $sql . "FROM" . "'$_COOKIE['tipo_utente']'";
 			$sql = $sql . "WHERE" . $tipo[i] . "=" . $tipo[i+1] . " \" ";
 			
-			if ($conn->query($sql) === TRUE) {
-					setcookie("valore", 0 , time()+3600);
-					header($_COOKIE['file']);
-			} 
-			else {
-				echo "Error: " . $sql . "<br>" . $conn->error;
-			}
-			
-			
-		
-		}
-		
-		
+				$row=$conn->query($sql);	
+				$stringa="";	
+				while($a=$row->fetch_row()){
+				$stringa=$stringa.implode(',',$a);
+				}
 
-	}
-	
-	else{
+			setcookie("valore", 0 , time()+3600);
+			setcookie("risultato",$stringa, time()+3600);
+			header($_COOKIE['file']); 
+			
+			}
+		
+	}else{
 		
 		// se non vengono settati tutti i cookie, quindi se l'utente non immette tutti i dati
 		// viene reindirizzato alla pagina iniziale
