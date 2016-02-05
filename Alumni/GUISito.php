@@ -37,7 +37,7 @@
 <?php
 
 <<<<<<< HEAD
-		/*Connessione al server :) */
+		/*Connessione al server  */
 		
 =======
 		/*Connessione al server  */
