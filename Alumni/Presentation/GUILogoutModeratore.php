@@ -26,13 +26,7 @@
 
 
 <!--Elimininazione cookie-->
-     <?php 
-   
-
-setcookie ("id_utente", "VALORE", time()-1);
-setcookie ("tipo_utente","VALORE", time()-1);
-
-?>
+     <div id='mod88'></div>
 
 <!--Primo blocco:intestazione->Logo ed immagini-->
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->

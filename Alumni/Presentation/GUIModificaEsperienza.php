@@ -42,11 +42,7 @@
   
 
 
-   <?php 
-    			 if (!isset($_COOKIE['id_utente']) && !isset($_COOKIE['tipo_utente']) && $_COOKIE['tipo_utente']!="alumno"){
- 			header("location: ../GUISito.php"); }
- 			
-			 ?>
+  <div id='mod93'></div>
 
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->
   </div>
@@ -87,23 +83,17 @@
         <div class="clr"></div>
         <div class="gadget">
         <div><div><strong><span class="style9">ALUMNO</span><A NAME="s" ></a></strong><br /><br />
-         <?php 
-              $immagine = "uploads/".$_COOKIE['id_utente'].".jpg";
-              echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../images/userpic.gif'></img></a>";
-              
-              ?>
+        
+		<div id='mod94'></div>
 <br />
           <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <?php 
- 			 $id = $_COOKIE['id_utente'];
- 			 $tipo = $_COOKIE['tipo_utente'];
-  			 require_once("../GUI_MG/connessione.php");
-			 $query="select nome, cognome from $tipo where ID='$id' ";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM);
-			 echo $row[0]; ?><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row[1]; $query="select DESCRIZIONE from esperienza where ALUMNO='$id' ";
- 			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM); ?><br /></strong><br /><br /><br /><br />
+		  		<div id='mod95'></div>
+
+        <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 		<div id='mod96'></div>
+
+			 
+			 <br /></strong><br /><br /><br /><br />
 			</div> 
 			</div>
           <h2 class="star"><span class="style8">Autenticazione</span> </h2>
@@ -132,13 +122,9 @@
         </div>
         
       </div>
-      <?php 
-      		 if (isset($_POST['testo'])){
- 			 $testo = $_POST['testo'];
- 			 mysql_query("UPDATE esperienza SET DESCRIZIONE='$testo', MODERATORE=NULL WHERE ALUMNO='$id'");
-            		   echo "<script type='text/javascript'>window.location = 'loggato/GUIStorie.php#s';alert('La richiesta di modifica è stata inoltrata ad un moderatore, riceverete un email appena verrà approvata/revocata'); </script>";				
- 				}
-			 ?>
+    
+	
+	<div id='mod95'></div>
       <div class="mainbar" ><!--Pannello della funzionalità principale-->
         <div class="article">
           <h2>Inserisci la tua Esperienza</h2>

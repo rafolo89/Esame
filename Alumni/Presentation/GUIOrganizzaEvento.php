@@ -96,22 +96,18 @@
         <div class="clr"></div>
         <div class="gadget">
         <div><div><strong><span class="style9">DOCENTE<A NAME="s" ></a></span></strong><br /><br />
-        <?php 
-              $immagine = "uploads/".$_COOKIE['id_utente'].".jpg";
-              echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../images/userpic.gif'></img></a>";
-              
-              ?>
+        <div id='mod8'></div>
 
 </img><br />
           <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <?php 
- 			 $id = $_COOKIE['id_utente'];
- 			 $tipo = $_COOKIE['tipo_utente'];
-  			 require_once("connessione.php");
-  			 $query="select nome, cognome from $tipo where CF='$id' ";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM);
-			 echo $row[0]; ?><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row[1]; ?><br /></strong><br /><br /><br /><br />
+         
+		         <div id='mod9'></div>
+
+		 <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 
+		 		         <div id='mod10'></div>
+
+		 <br /></strong><br /><br /><br /><br />
 			</div> 
 			</div>
           <h2 class="star"><span class="style8">Autenticazione</span> </h2>
@@ -186,7 +182,8 @@
 
 	        </form>
 	  
-	 
+	 		         <div id='mod11'></div>
+
           </div>
       	   
           

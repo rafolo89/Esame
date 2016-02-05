@@ -41,10 +41,8 @@
 
 </head>
 <body>
-   <?php 
- 			 if (!isset($_COOKIE['id_utente']) && !isset($_COOKIE['tipo_utente']) && $_COOKIE['tipo_utente']!="alumno"){
- 			header("location: ../GUISito.php"); }?>
-
+  
+<div id='mod24'></div>
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->
   </div>
       <div class="style7" style="width: 100%; ">
@@ -80,26 +78,23 @@
   <div class="content"><!--Contenitore principale delle funzionalità della pagina corrente-->
     <div class="content_resize" style="width: 1301px; ">
     
-
+<div id='mod25'></div>
       <div class="sidebar" style="right: 50px; top: -14px" ><!--Pannello laterale, inerente allo specifico utente loggato ed alle sue funzionalità  -->
         <div class="clr"></div>
         <div class="gadget">
         <div><div><strong><span class="style9">DOCENTE<A NAME="s" ></a></span></strong><br /><br />
-        <?php 
-              $immagine = "uploads/".$_COOKIE['id_utente'].".jpg";
-              echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../images/userpic.gif'></img></a>";
-              
-              ?>
+        
 <br />
           <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <?php 
- 			 $id = $_COOKIE['id_utente'];
- 			 $tipo = $_COOKIE['tipo_utente'];
-  			 require_once("connessione.php");
-  			 $query="select nome, cognome from $tipo where CF='$id' ";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM);
-			 echo $row[0]; ?><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row[1]; ?><br /></strong><br /><br /><br /><br />
+          
+		  <div id='mod26'></div>
+		  
+		  <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+		  
+		  <div id='mod27'></div>
+		  
+		  <br /></strong><br /><br /><br /><br />
 			</div> 
 			</div>
           <h2 class="star"><span class="style8">Autenticazione</span> </h2>

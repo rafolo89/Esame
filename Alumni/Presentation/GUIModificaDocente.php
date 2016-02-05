@@ -41,22 +41,8 @@
 
 </head>
 <body>
-   <?php 
- 			 if (!isset($_COOKIE['id_utente']) && !isset($_COOKIE['tipo_utente']) && $_COOKIE['tipo_utente']!="alumno"){
- 			header("location: ../GUISito.php"); }
- 			
- 			if(isset($_POST["nome"])){
-		$a= $_POST["nome"];
-		$b= $_POST["cognome"];
-		$c= $_POST["datadinascita"];
-		$d= $_POST["luogodinascita"];
-		$e= $_POST["codicefiscale"];
-		$f= $_POST["email"];
-		$g= $_POST["annoconseguimentolaurea"];
-		$h= $_POST["corsitenuti"];
-		$i= $_POST["password"];
-		$l= $_POST["confermapassword"];
-}?>
+  
+  <div id='mod18'></div>
 
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->
   </div>
@@ -97,30 +83,19 @@
         <div class="clr"></div>
         <div class="gadget">
         <div><div><strong><span class="style9">AMMINISTRATORE<a name="s" ></a></span></strong><br /><br />
-        <?php 
-              $immagine = "../GUI_AO/uploads/".$_COOKIE['id_utente'].".jpg";
-              echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../../images/userpic.gif'></img></a>";
-              
-              ?>
 
-<br />
+		<div id='mod19'></div>
+		
+		<br />
           <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <?php 
- 			 $id = $_COOKIE['id_utente'];
- 			 $tipo = $_COOKIE['tipo_utente'];
-  			 require_once("connessione.php");
-  			 $query="select nome, cognome from $tipo where ID='$id' ";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM);
-			 echo $row[0]; 
-		 	 session_start();
-			 $cf = $_SESSION['codfi'];
-			 $query = "SELECT NOME, COGNOME, CF, DATA_DI_NASCITA, LUOGO_DI_NASCITA, ANNO_DI_LAUREA, EMAIL, PW FROM docente WHERE CF = '$cf'";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM); 
+         
+		 <div id='mod20'></div>
+		 
+		 <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 
+		 		 <div id='mod21'></div>
 
-			 
-			 ?><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row[1]; ?><br /></strong><br /><br /><br /><br />
+		 <br /></strong><br /><br /><br /><br />
 			</div> 
 			</div>
           <h2 class="star"><span class="style8">Autenticazione</span> </h2>
@@ -156,79 +131,8 @@
         </div>
         
       </div>
-       <?php 
-      		 if (isset($_POST['nome'])){
-      		 if(isset($a)){
- 		
-		if((strlen($a) <=3) || (strlen($a) >=20 )) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";           		 
-        }
-		if((strlen($b) <=2) || (strlen($b) >=20 )) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdcognome').innerHTML='Il campo cognome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";           		 
-        }
-		if((strlen($c))!= 10) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tddata').innerHTML='Il campo data di nascita deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";           	        
-      				}
-		if((strlen($d) <=4) || (strlen($d) >=15 )) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";          
-      				 }
-		if ((strlen($e))!= 16){
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";   				
-        			}
-		if((strlen($f) <=5) || (strlen($f) >=20 )) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";          
-      				 }
-		if  ((strlen($g))!= 4){
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";           
-      				}
-		if((strlen($h) <=5) || (strlen($h) >=50 )) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";           
-      				}
-		if((strlen($i) <=8) || (strlen($i) >=15 || $l!=$i)) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";           
-      				}
-		if((strlen($l) <=8) || (strlen($l) >=15 || $l!=$i)) {
-					$numero++;
-      				echo "<script language='JavaScript' type='text/javascript'> document.getElementById('tdnome').innerHTML='Il campo nome deve contenere una stringa compresa tra 4 e 11 caratteri';</script>";           
-      				}
-		if($numero==0){
-		$query= "insert into Docente(NOME, COGNOME,DATA_DI_NASCITA,LUOGO_DI_NASCITA,CF,EMAIL,ANNO_DI_LAUREA,PW) values ('$a','$b','$c','$d','$e','$f','$g','$i') ";
-		mysql_query($query);
-		
-		$nome=null;
-		for($m=0; $m<strlen($h); $m++){
-			$controllo=null;
-			$controllo=substr($h,$m,1);
-			if($controllo==","){
-				$query= "insert into Corso(COD_CORSO,NOME_CORSO,DOCENTE) values ('$codcorso','$nome','$e') ";
-				$codcorso++;
-				mysql_query($query);
-				$nome=null;
-				$m++;
-			}
-				
-			$nome=$nome.$controllo;
-			
-		}
-
-		$query= "UPDATE Corso SET COD_CORSO,NOME_CORSO,DOCENTE values ('$codcorso','$nome','$e') ";
-		mysql_query($query);
-	  
-	  }}
-
-
-            		   echo "<script type='text/javascript'>alert('La tue esperienza è stata modificata  ora è soggetta ad approvazione da un moderatore,l esito ti verrà notificato via email'); </script>";				
- }
-			 ?>
+      
+	  <div id='mod22'></div>
 
 
       <div class="mainbar" ><!--Pannello della funzionalità principale-->

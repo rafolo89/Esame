@@ -1,4 +1,22 @@
-<?php  
+ 
+<?php
+     
+        if(isset($_POST["inputnome"])){
+            $a = $_POST["inputnome"];
+            $b = $_POST["inputcognome"];
+            $c = $_POST["inputdata"];
+            $d = $_POST["inputluogo"];
+            $e = $_POST["inputlavoro"];
+            $f = $_POST["inputanno"];
+            $g = $_POST["inputemail"];
+            $h = $_POST["inputpassword"];
+            $i = $_POST["inputcpw"];
+
+      }   
+    ?>
+     <?php echo $_POST['valore']; ?>
+	 
+	 <?php  
 			if(isset($a)){
 			$numero=0;
 				if((strlen($a) < 4) || (strlen($a) >11 )) {

@@ -95,22 +95,20 @@
         <div class="clr"></div>
         <div class="gadget">
         <div><div><strong><span class="style9">DOCENTE<A NAME="s" ></a></span></strong><br /><br />
-        <?php 
-              $immagine = "uploads/".$_COOKIE['id_utente'].".jpg";
-              echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../../images/userpic.gif'></img></a>";
-              
-              ?>
+        
+		<div id='mod12'></div>
 
 
           <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <?php 
- 			 $id = $_COOKIE['id_utente'];
- 			 $tipo = $_COOKIE['tipo_utente'];
-  			 require_once("connessione.php");
-  			 $query="select nome, cognome from $tipo where CF='$id' ";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM);
-			 echo $row[0]; ?><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row[1]; ?><br /></strong><br /><br /><br /><br />
+          
+		  		<div id='mod13'></div>
+
+		  
+		  <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+		  		  		<div id='mod14'></div>
+
+		  <br /></strong><br /><br /><br /><br />
 			</div> 
 			</div>
           <h2 class="star"><span class="style8">Autenticazione</span> </h2>
@@ -157,30 +155,21 @@
           <div class="post_content">
             <form  method="post" action="GUIModificaEvento.php">
 		   <table>
-		   <?php 
-					$a=$_COOKIE['Doc'];
-
-			 		$query="select * from evento where ID='$a' && DOCENTE='$id' ";
-					$q=mysql_query($query);
-			 		if($eve = mysql_fetch_array($q, MYSQL_NUM)){
-
-          }else{
-            echo '<script type="text/javascript">window.location = "GUICercaEvento.php#s";alert("ID non valido:Inserire un ID associato ad un evento inserito dal Docente loggato!")</script>';
-          }
-		   ?>
+		   
+		   <div id='mod14'></div>
 				
 				<tr>
 					<td style="height: 37px; width: 103px;">Nome Evento</td>
-					<td style="height: 37px; width: 224px;"><input type="text" name="nomeevento" size="35" maxlength="15" value="<?php echo $eve[1] ?>" required autofocus ></td><td id="tdnomeevento" style=" color:red; height: 37px"></td>
+					<td style="height: 37px; width: 224px;"><input type="text" name="nomeevento" size="35" maxlength="15" value="<div id='mod15'></div>" required autofocus ></td><td id="tdnomeevento" style=" color:red; height: 37px"></td>
 				</tr>		
 				<tr>
 					<td style="height: 37px; width: 103px;">Data inizio:</td>
-					<td style="height: 37px; width: 224px;"><input type="text" name="datainizio" size="35" maxlength="10" value="<?php echo $eve[2] ?>" required autofocus ></td><td id="tddata" style=" color:red; height: 37px"></td>
+					<td style="height: 37px; width: 224px;"><input type="text" name="datainizio" size="35" maxlength="10" value="<div id='mod16'></div>" required autofocus ></td><td id="tddata" style=" color:red; height: 37px"></td>
 				</tr>
 					<tr>
 					<td style="height: 37px; width: 103px;">&nbsp;</td>
 					<td style="height: 37px; width: 224px;"><br>Descrizione: <br><br>
-					<input type="text" wrap="hard" name="descrizione" size="35" maxlength="200" value="<?php echo $eve[3] ?>" required autofocus style="height: 318px; width: 504px" ></td><td id="tddescrizione" style=" color:red; height: 37px"></td>
+					<input type="text" wrap="hard" name="descrizione" size="35" maxlength="200" value="<div id='mod15'></div>" required autofocus style="height: 318px; width: 504px" ></td><td id="tddescrizione" style=" color:red; height: 37px"></td>
 				</tr>
 				
 			<tr>
@@ -194,37 +183,7 @@
 	  
 	 
           </div>
-      	<?php 
-        
-          if(isset($_POST['nomeevento'])){
-        
-           
-            $b=$_POST['nomeevento'];  
-            $c=$_POST['datainizio'];  
-            $d=$_POST['descrizione']; 
-            
-            $cont=0;
-            if(strlen($b)<6 || strlen($b)>20){
-                echo "<script>document.getElementById('tdnomeevento').innerHTML = 'Il nome evento contiene tra i 6 e i 20 caratteri';</script>";
-                $cont++;
-            }
-            if(strlen($c)!=10){
-                echo "<script>document.getElementById('tddata').innerHTML = 'La data deve essere scritta nella forma gg/mm/aaaa';</script>";
-                $cont++;
-            }
-            if(strlen($d)<30 || strlen($d)>200){
-                echo "<script>document.getElementById('tddescrizione').innerHTML = 'La descrizione deve contenere tra i 30 e i 200 caratteri';</script>";
-                $cont++;
-            }
-              
-            if ($cont==0) {
-               $query= "update evento set NOME_EVENTO='$b',DATA_EVENTO='$c',DESCRIZIONE='$d' where id='$a'";
-               mysql_query($query);
-               echo '<script type="text/javascript">window.location = "loggato/GUIEventi.php#s";alert('L\evento è stato aggiornato');</script>';
-            }
-          }
-
-          ?>  
+      	<div id='mod17'></div>  
           <div class="clr"></div>
         </div>
         

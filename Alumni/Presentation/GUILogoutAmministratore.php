@@ -22,13 +22,7 @@
 
 </head>
 <body><!--Corpo della pagina-->
-    <?php 
-   
-
-setcookie ("id_utente", "VALORE", time()-3600);
-setcookie ("tipo_utente","VALORE", time()-3600);
-
-?>
+  <div id='mod86'></div>
 
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->
   </div>
