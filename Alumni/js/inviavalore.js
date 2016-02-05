@@ -1,6 +1,6 @@
 var xmlHttp
 
-function stampa(str,nomefile)
+function stampa(str,nomefile, nomediv)
 {
 xmlHttp=GetXmlHttpObject()
 if (xmlHttp==null)
@@ -19,7 +19,7 @@ xmlHttp.send(null);
 function stateChanged() 
 { 
    if (xmlHttp.readyState==4){ 
-       document.getElementById("post_content").innerHTML=xmlHttp.responseText;
+       document.getElementById(nomediv).innerHTML=xmlHttp.responseText;
    }
 }
 
