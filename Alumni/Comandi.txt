@@ -1,0 +1,4 @@
+valore=0 torna il comando all'application 
+valore=1 carica immagine
+valore=2 stampa nome utente nel primo div
+valore=3 stampa cognome utente nel primo div
