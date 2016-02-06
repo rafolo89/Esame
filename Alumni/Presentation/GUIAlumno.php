@@ -40,7 +40,7 @@
 
 </script>
 </head>
-<body onload="stampa(,'../Application/Alumno.php','mod41')">
+<body onload="stampa('1','../Application/Alumno.php','mod41');stampa('2','../Application/Alumno.php','mod42');stampa('3','../Application/Alumno.php','mod43'); ">
 <!--Corpo della pagina-->
   
   <div id='mod40'></div>

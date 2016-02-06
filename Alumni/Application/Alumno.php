@@ -5,7 +5,7 @@
  $path="../Application/".basename($_SERVER['PHP_SELF'])
  setcookie("file",, time()+3600);
  if($_POST['valore']==1){
-              $immagine = "../Alumno/uploads/".$_COOKIE['id_utente']." ".jpg";
+              $immagine = "../Alumno/uploads/".$_COOKIE['id_utente'].".jpg";
               echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../images/userpic.gif'></img></a>";
               }
               
@@ -27,3 +27,6 @@
 			echo $row;
  			
  }
+
+ 
+ ?>
