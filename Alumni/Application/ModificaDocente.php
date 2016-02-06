@@ -15,29 +15,33 @@
 		$l= $_POST["confermapassword"];
 }?>
 
-        <?php 
-              $immagine = "../GUI_AO/uploads/".$_COOKIE['id_utente'].".jpg";
-              echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../../images/userpic.gif'></img></a>";
+       <?php 
+ if(!isset($_POST['valore']){
+ 			header("location: ../GUISito.php#s"); 
+      }
+ $path="../Application/".basename($_SERVER['PHP_SELF'])
+ setcookie("file",, time()+3600);
+ if($_POST['valore']==1){
+              $immagine = "../Amministratore/uploads/".$_COOKIE['id_utente'].".jpg";
+              echo "<a href='JavaScript:openWindow()' ><img src=$immagine alt='BO'  height='100' width='100' style = 'float : left' onerror=this.src='../images/userpic.gif'></img></a>";
+              }
               
-              ?>
-
- <?php 
- 			 $id = $_COOKIE['id_utente'];
- 			 $tipo = $_COOKIE['tipo_utente'];
-  			 require_once("connessione.php");
-  			 $query="select nome, cognome from $tipo where ID='$id' ";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM);
-			 echo $row[0]; 
-		 	 session_start();
-			 $cf = $_SESSION['codfi'];
-			 $query = "SELECT NOME, COGNOME, CF, DATA_DI_NASCITA, LUOGO_DI_NASCITA, ANNO_DI_LAUREA, EMAIL, PW FROM docente WHERE CF = '$cf'";
-			 $q=mysql_query($query);
-			 $row = mysql_fetch_array($q, MYSQL_NUM); 
-
+ if($_POST['valore']==2){
+ 			 setcookie("valore","NOME= , ID= ".$_COOKIE['id_utente']."", time()+3600);
+  			 setcookie("scelta","visualizza", time()+3600);
+			 header("../Storage/Storage.php");
+			 }
 			 
-			 ?>
-			 <?php echo $row[1]; ?>
+  if($_POST['valore']==3){
+ 			 setcookie("valore","COGNOME= , ID= ".$_COOKIE['id_utente']."", time()+3600);
+  			 setcookie("scelta","visualizza", time()+3600);
+			 header("../Storage/Storage.php");
+			 }
+			  if($_POST['valore']==0){
+		
+ 			$row= $_COOKIE['risultato'];
+			echo $row;
+?>
 			 
 			  <?php 
       		 if (isset($_POST['nome'])){
