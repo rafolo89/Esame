@@ -128,7 +128,7 @@
 				$row=$conn->query($sql);	
 				$stringa="";	
 				while($a=$row->fetch_row()){
-				$stringa=$stringa.implode(',',$a);
+				$stringa=$stringa . $a;
 				}
 
 			setcookie("valore", 0 , time()+3600);

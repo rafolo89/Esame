@@ -22,8 +22,8 @@
 			 }
 			 
  if($_POST['valore']==0){
- 		
- 			$row= explode(",",$_COOKIE['risultato']);
-			while()
- 			echo"";
- 			}
+		
+ 			$row= $_COOKIE['risultato'];
+			echo $row;
+ 			
+ }
