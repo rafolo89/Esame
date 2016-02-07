@@ -41,6 +41,8 @@
 
 </script>
 </head>
+
+<!-- in locale per farlo funzionare ci vogliono i doppi apici nella funzione stampa( non so perchè ma in notepad mi da errore con i doppi apici) -->
 <body onload="stampa('1','../Application/Alumno.php','mod41');stampa('2','../Application/Alumno.php','mod42');stampa('3','../Application/Alumno.php','mod43'); ">
 <!--Corpo della pagina-->
   
