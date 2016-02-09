@@ -150,7 +150,7 @@
 				while($a=mysqli_fetch_row($row)){
 					$stringa=$stringa . $a[0];
 				}
-			setcookie("b", $stringa , time()+3600, "/Alumni/");
+			   setcookie("b", $stringa , time()+3600, "/Alumni/");
 			
 			
 		}
