@@ -3,7 +3,7 @@
  			header("Location: ../GUISito.php#s"); 
       }
  $path="../Application/".basename($_SERVER['PHP_SELF']);
- setcookie("file","../Presentation/provaprova.php", time()+3600, "/Alumni/");
+ 
  			 
 	if($_GET['valore']==0){
 		
