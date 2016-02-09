@@ -1,10 +1,10 @@
 ﻿<?php
 
+		if(isset($_COOKIE['tipo'])){
+			// $_COOKIE['tipo'] è il contenuto della stringa e deve essere nella forma nome = "francesco" (separata da uno spazio )
+			$tipo= explode(' ',implode (explode('=',implode (explode(',' ,$_COOKIE['tipo'])))));
 		
-		// $_COOKIE['valore'] il contenuto della stringa deve essere nella forma nome = "francesco" (separata da uno spazio )
-		$tipo= explode(' ',implode (explode('=',implode (explode(',' ,$_COOKIE['tipo'])))));
-		
-		
+		}
 		
 		
 		$servername = "localhost";
@@ -18,41 +18,64 @@
 		// verifica connessione
 		if ($conn->connect_error) {
 
-			setcookie("valore", 0 , time()+3600, "/Alumni/");
+			
 			setcookie("risultato","1Connessione fallita", time()+3600, "/Alumni/");
 			header("Location: ". $_COOKIE['file']);
 			
 		} 
 		
+		switch($_COOKIE['valore']){
+			
+			case "visualizza": 
+				visualizza($tipo,$conn);
+				break;
+			case "insert":
+				insert($tipo,$conn);
+				break;
+			case "remove":
+				remove($conn);
+				break;
+			case "update":
+				update($tipo,$conn);
+				break;
+			
+			
+		}
 		
 		
 		
-		visualizza($tipo,$conn);
-		
-		
-		
-		
-	
+
 
 		/* insert */
-		 function insert(){
+		 function insert($tipo,$conn){
 			
-			$i=1;
-			$sql = "INSERT INTO" . $_COOKIE['tipo_utente']." VALUES ('";
-			while($i<= count($tipo)){
-				$sql= $sql . $tipo[$i]."'";
-				$i=$i+2;
+			$i=0;
+			$sql = "INSERT INTO" . $_COOKIE['tipo_utente']. "(";
+			$string="('"
+			while($i < count($tipo)-2){
+			  if($i%2==0){
+				$sql= $sql . $tipo[$i].", ";
+				
+			  }	
+			  else{
+				  $string= $string . $tipo[$i] . "','";
+			  }
+			  $i=$i+1;
 			}
-			$sql = $sql . ")";
+			
+			$sql = $sql . $tipo[$i] . ")";
+			$i= $i+1;
+			$string= $string . $tipo[$i] . "')";
+			$sql = $sql . " VALUES " . $string;
 			
 			$conn->query($sql);
-			setcookie("valore", 0 , time()+3600,"/Alumni/");
+			
 			setcookie("risultato","1inserimento avvenuto con successo", time()+3600, "/Alumni/");
-			header($_COOKIE['file']);
+			
 		}
 		
 		/*delete */
-		function remove(){
+		function remove($conn){
 		
 			if($_COOKIE['tipo_utente']=='docente'){
 			
@@ -61,41 +84,41 @@
 			else if($_COOKIE['tipo_utente']=='esperienza'){
 			
 			
-				$sql = "DELETE FROM".  $_COOKIE['tipo_utente']." WHERE ALUMNO=". $tipo[count($tipo)-1]." ";
+				$sql = "DELETE FROM".  $_COOKIE['tipo_utente']." WHERE ALUMNO= ". $tipo[count($tipo)-1]." ";
 			
 			}
 			else{
-				$sql = "DELETE FROM". $_COOKIE['tipo_utente']. "WHERE ID=". $tipo[count($tipo)-1]." ";
+				$sql = "DELETE FROM". $_COOKIE['tipo_utente']. "WHERE ID= ". $tipo[count($tipo)-3]." ". "AND CF= " . $tipo[count($tipo)-1]." "  ;
 			}
 		
 			$conn->query($sql);
-			setcookie("valore", 0 , time()+3600, "/Alumni/");
+			
 			setcookie("risultato","1cancellazione avvenuta con successo", time()+3600, "/Alumni/");
-			header($_COOKIE['file']);			
+						
 		
 		}
 		
 		/*update*/
-		function update(){
+		function update($tipo,$conn){
 			
 				$i=0;
 				$sql ="UPDATE ". $_COOKIE['tipo_utente']. " SET ";
-				while($i<count($tipo-2)){
-					$sql= $sql . "'". $tipo[$i] . "'= '" . $tipo[$i+1] . "'";
+				while($i<count($tipo)-2){
+					$sql= $sql . " ". $tipo[$i] . " = '" . $tipo[$i+1] . "'";
 					$i=$i+2;
 				}
-				$sql = $sql . "WHERE";
+				$sql = $sql . " WHERE ";
 				
 				
 					
-				$sql = $sql . $tipo[i] . "=" . $tipo[i+1] . " \" ";
+				$sql = $sql . $tipo[i] . "=" . $tipo[i+1] . "  ";
 					
 			
 				
 				$conn->query($sql);
-				setcookie("valore", 0 , time()+3600, "/Alumni/");
+				
 				setcookie("risultato","1modifica avvenuta con successo", time()+3600, "/Alumni/");
-				header($_COOKIE['file']);
+				
 							
 		
 		}
@@ -128,9 +151,7 @@
 					$stringa=$stringa . $a[0];
 				}
 			setcookie("b", $stringa , time()+3600, "/Alumni/");
-			//setcookie("valore", 0 , time()+3600, "/Alumni/");
 			
-			//header("Location:". "&#34;". $_COOKIE['file'] ."&#34;");
 			
 		}
 		
