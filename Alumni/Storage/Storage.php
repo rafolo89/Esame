@@ -48,6 +48,9 @@
 
 		/* insert */
 		 function insert($tipo,$conn){
+			 
+			 
+			 
 			
 			$i=0;
 			$sql = "INSERT INTO" . $_COOKIE['tipo_utente']. "(";
@@ -71,6 +74,14 @@
 			$conn->query($sql);
 			
 			setcookie("risultato","1inserimento avvenuto con successo", time()+3600, "/Alumni/");
+			
+			switch($_COOKIE['tipo_utente']){
+				
+				case "docente": setcookie('tipo_utente','amministratore',time()+3600);
+				case "evento":  setcookie('tipo_utente','docente',time()+3600);
+				case "esperienza": setcookie('tipo_utente','alumno',time()+3600);
+			
+			}
 			
 		}
 		
@@ -119,6 +130,13 @@
 				
 				setcookie("risultato","1modifica avvenuta con successo", time()+3600, "/Alumni/");
 				
+				switch($_COOKIE['tipo_utente']){
+				
+				case "docente": setcookie('tipo_utente','amministratore',time()+3600);
+				case "evento":  setcookie('tipo_utente','docente',time()+3600);
+				case "esperienza": setcookie('tipo_utente','alumno',time()+3600);
+			
+			}
 							
 		
 		}
