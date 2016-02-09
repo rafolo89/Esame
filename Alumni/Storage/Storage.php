@@ -23,22 +23,6 @@
 		
 		
 		
-		switch($_COOKIE['scelta']){
-			
-			case "insert" : 
-				insert();
-				break;
-			case "remove" :
-				remove();
-				break;
-			case "update":
-				update();
-				break;
-			case "visualizza":
-				visualizza();
-				break;
-			
-		}
 		
 		
 		
@@ -143,6 +127,24 @@
 		// viene reindirizzato alla pagina iniziale
 		header("Presentation/GUISito.php");
 	}
+	
+	switch($_COOKIE['scelta']){
+			
+			case "insert" : 
+				insert();
+				break;
+			case "remove" :
+				remove();
+				break;
+			case "update":
+				update();
+				break;
+			case "visualizza":
+				visualizza();
+				break;
+			
+		}
+		
 
 
 ?>
