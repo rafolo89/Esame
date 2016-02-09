@@ -12,12 +12,13 @@
 <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="../js/script.js"></script>
 <script type="text/javascript" src="../js/coin-slider.min.js"></script>
-<script type="text/javascript" src="../js/inviavalore.js"> </script>
+
+
 <script LANGUAGE="JavaScript">
     <!-- 
     function openWindow()
     {
-        open ("../GUI_LC/selezioneImmagine.html","new","height=500,width=680,scrollbars=0,resizable=0,status=1,menubar=0,toolbar=0,location")
+        open ("selezioneImmagine.html","new","height=500,width=680,scrollbars=0,resizable=0,status=1,menubar=0,toolbar=0,location")
     //settando i parametri a 1, le barre vengono visualizzate, a 0 no.
     }
     -->
@@ -32,18 +33,24 @@
 	font-size: large;
 }
 .style9 {
+
 	font-size: x-large;
 }
+.style10 {
+	
+	text-align: center;
+	font-weight: bold;
+	
+}
+
 </style>
 
 
-<script src="">
+<script src="../js/inviavalore.js">
 
 </script>
 </head>
-
-<!-- in locale per farlo funzionare ci vogliono i doppi apici nella funzione stampa( non so perchè ma in notepad mi da errore con i doppi apici) -->
-<body onload="stampa('1','../Application/Alumno.php','mod41');stampa('2','../Application/Alumno.php','mod42');stampa('3','../Application/Alumno.php','mod43'); ">
+<body onload= "stampa('1','../Application/Alumno.php','mod41');stampa('2','../Application/Alumno.php','mod42');stampa('0','../Application/Alumno.php','mod42');stampa('3','../Application/Alumno.php','mod43');stampa('0','../Application/Alumno.php','mod43');">
 <!--Corpo della pagina-->
   
   <div id='mod40'></div>
@@ -89,13 +96,13 @@
         <div><div><strong><span class="style9">ALUMNO<a name="s" ></a></span></strong><br /><br />
         	 
 			 <div id='mod41'></div>
-<br />
-          <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		  			 <div id='mod42'></div>
 
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		  			 <div id='mod42' class="style10" > </div>
+
+           
 		  
-		 <div id='mod43'></div>
+		 <div id='mod43'class="style10" ></div>
 
 		  <br /></strong><br /><br /><br /><br />
 			</div> 

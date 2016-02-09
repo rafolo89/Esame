@@ -3,7 +3,7 @@ var xmlHttp
 function stampa(str,nomefile, nomediv)
 {
       var xmlhttp = new XMLHttpRequest();
-         xmlhttp.onreadystatechange = function() {
+			xmlhttp.onreadystatechange = function() {
              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
              var valore=xmlhttp.responseText;
              if(valore.charAt(0)!=1){
@@ -13,7 +13,7 @@ function stampa(str,nomefile, nomediv)
                  }
              }
          }
-         xmlhttp.open("POST", nomefile+"?valore="+str, true);
+         xmlhttp.open("GET", nomefile+"?valore="+str, false);
          xmlhttp.send();
      }
 
