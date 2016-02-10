@@ -1,6 +1,6 @@
 <?php
-						require_once("../GUI_MG/connessione.php");
 
+                      if($_COOKIE['valore']== 1){
 				$query = "SELECT alumno, moderatore FROM esperienza  WHERE moderatore IS NOT NULL ORDER BY esperienza.moderatore DESC";
 				$alumni = mysql_query($query);
 				
@@ -41,5 +41,5 @@
         				 <div class='clr'></div>";
 					}	
 				}			
-
+             }
 			?>

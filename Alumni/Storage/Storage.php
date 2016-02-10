@@ -5,7 +5,10 @@
 			$tipo= explode(' ',implode (explode('=',implode (explode(',' ,$_COOKIE['tipo'])))));
 		
 		}
-		
+	    $entita= explode (',',$_COOKIE['tipo_utente']);
+		if(count($entita)==2){
+		setcookie('tipo_utente',$entita[1],time()+3600);
+		}
 		
 		$servername = "localhost";
 		$username = "root";
@@ -27,7 +30,7 @@
 		switch($_COOKIE['valore']){
 			
 			case "visualizza": 
-				visualizza($tipo,$conn);
+				visualizza($tipo,$conn,$entita);
 				break;
 			case "insert":
 				insert($tipo,$conn);
@@ -42,18 +45,11 @@
 			
 		}
 		
-		
-		
-
-
-		/* insert */
+	       /* insert */
 		 function insert($tipo,$conn){
 			 
-			 
-			 
-			
 			$i=0;
-			$sql = "INSERT INTO" . $_COOKIE['tipo_utente']. "(";
+			$sql = "INSERT INTO".$entita[0]."(";
 			$string="('"
 			while($i < count($tipo)-2){
 			  if($i%2==0){
@@ -75,13 +71,7 @@
 			
 			setcookie("risultato","1inserimento avvenuto con successo", time()+3600, "/Alumni/");
 			
-			switch($_COOKIE['tipo_utente']){
-				
-				case "docente": setcookie('tipo_utente','amministratore',time()+3600);
-				case "evento":  setcookie('tipo_utente','docente',time()+3600);
-				case "esperienza": setcookie('tipo_utente','alumno',time()+3600);
 			
-			}
 			
 		}
 		
@@ -142,7 +132,7 @@
 		}
 		
 		/* select*/
-		 function visualizza($tipo, $conn){
+		 function visualizza($tipo, $conn,$entita){
 		
 			$i=0;
 			$sql = "SELECT ";
@@ -158,10 +148,15 @@
 			   $i=$i+2;
 			}
 			
-			
-			$sql = $sql . "FROM " . $_COOKIE['tipo_utente'] . " ";
-			$sql = $sql . "WHERE " . $tipo[$i-2] . "='" . $tipo[$i-1] . "' ";
-			
+			$sql = $sql . "FROM ".$entita[0]." WHERE ";
+			 if(isset ($_COOKIE['where']) {
+			     $sql=$sql.$_COOKIE['where'];
+				 }
+				 else
+				 {
+				 
+			$sql = $sql . $tipo[$i-2] . "='" . $tipo[$i-1] . "' ";
+			}
 				
 				$row=mysqli_query($conn,$sql);	
 				$stringa=" ";	
@@ -169,14 +164,26 @@
 					$stringa=$stringa . $a[0];
 				}
 			   setcookie("b", $stringa , time()+3600, "/Alumni/");
+			    switch ($_COOKIE['tipo_utente']){
+				
+				    case "docente":
+				        break;
+				
+					case "amministratore":
+				        break;
+				
+					case "alumno":
+				         break;
+				
+					case "moderatore":
+				          break;
+				
+					case default:
+					   setcookie('tipo_utente','ciao',time()-1);
+				          break;
+				
+				}
 			
 			
 		}
-		
-	
-
-		
-	
-
-
 ?>
