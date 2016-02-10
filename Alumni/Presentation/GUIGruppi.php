@@ -33,9 +33,16 @@
 .style9 {
 	text-decoration: none;
 }
+.style10 {
+  
+  text-align: center;
+  font-weight: bold;
+  
+}
 </style>
+<script type="text/javascript" src = '../js/inviavalore.js'></script>
 </head>
-<body><!--Corpo della pagina-->
+<body onload="stampa('4', '../Application/Gruppi.php', 'mod77'); stampa('0', '../Application/Gruppi.php', 'mod77');"><!--Corpo della pagina-->
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->
   </div>
       <div class="style7" style="width: 100%; ">
