@@ -36,13 +36,20 @@
 .style10 {
 	color: #585757;
 }
+
+.style11 {
+	
+	text-align: center;
+	font-weight: bold;
+	
+}
 </style>
 
 
 </head>
-<body>
+<body onload= "stampa('1','../Application/Docente.php','mod41');stampa('2','../Application/Docente.php','mod42');stampa('0','../Application/Docente.php','mod42');stampa('3','../Application/Docente.php','mod43');stampa('0','../Application/Docente.php','mod43');">
   
-<div id='mod24'></div>
+<div id='mod40'></div>
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->
   </div>
       <div class="style7" style="width: 100%; ">
@@ -78,21 +85,23 @@
   <div class="content"><!--Contenitore principale delle funzionalità della pagina corrente-->
     <div class="content_resize" style="width: 1301px; ">
     
-<div id='mod25'></div>
+
       <div class="sidebar" style="right: 50px; top: -14px" ><!--Pannello laterale, inerente allo specifico utente loggato ed alle sue funzionalità  -->
         <div class="clr"></div>
         <div class="gadget">
         <div><div><strong><span class="style9">DOCENTE<A NAME="s" ></a></span></strong><br /><br />
         
+		<div id='mod41'></div>
+		
 <br />
           <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
           
-		  <div id='mod26'></div>
+		  <div id='mod42' class="style11"></div>
 		  
 		  <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		  
 		  
-		  <div id='mod27'></div>
+		  <div id='mod43'class="style11"></div>
 		  
 		  <br /></strong><br /><br /><br /><br />
 			</div> 
