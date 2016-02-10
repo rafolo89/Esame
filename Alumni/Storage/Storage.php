@@ -1,7 +1,7 @@
 ﻿<?php
 
 		if(isset($_COOKIE['tipo'])){
-			// $_COOKIE['tipo'] è il contenuto della stringa e deve essere nella forma nome = "francesco" (separata da uno spazio )
+			// $_COOKIE['tipo'] è il contenuto della stringa e deve essere nella forma "evento= ciqo, order= kjhk" (separata da uno spazio )
 			$tipo= explode(' ',implode (explode('=',implode (explode(',' ,$_COOKIE['tipo'])))));
 		
 		}
