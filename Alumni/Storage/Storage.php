@@ -7,7 +7,7 @@
 		}
 	    $entita= explode (',',$_COOKIE['tipo_utente']);
 		if(count($entita)==2){
-		setcookie('tipo_utente',$entita[1],time()+3600);
+		setcookie("tipo_utente",$entita[1],time()+3600, "/Alumni/");
 		}
 		
 		$servername = "localhost";
@@ -23,7 +23,7 @@
 
 			
 			setcookie("risultato","1Connessione fallita", time()+3600, "/Alumni/");
-			header("Location: ". $_COOKIE['file']);
+			header("Location: ../GUISito.php#s ");
 			
 		} 
 		
@@ -50,7 +50,7 @@
 			 
 			$i=0;
 			$sql = "INSERT INTO".$entita[0]."(";
-			$string="('"
+			$string="('";
 			while($i < count($tipo)-2){
 			  if($i%2==0){
 				$sql= $sql . $tipo[$i].", ";
@@ -122,9 +122,9 @@
 				
 				switch($_COOKIE['tipo_utente']){
 				
-				case "docente": setcookie('tipo_utente','amministratore',time()+3600);
-				case "evento":  setcookie('tipo_utente','docente',time()+3600);
-				case "esperienza": setcookie('tipo_utente','alumno',time()+3600);
+				case "docente": setcookie("tipo_utente",'amministratore',time()+3600, "/Alumni/");
+				case "evento":  setcookie("tipo_utente",'docente',time()+3600, "/Alumni/");
+				case "esperienza": setcookie("tipo_utente","alumno",time()+3600, "/Alumni/");
 			
 			}
 							
@@ -148,20 +148,24 @@
 			   $i=$i+2;
 			}
 			
-			$sql = $sql . "FROM ".$entita[0]." WHERE ";
-			 if(isset ($_COOKIE['where']) {
+			$sql = $sql . "FROM ".$entita[0];
+			 if(isset ($_COOKIE['where'])) {
 			     $sql=$sql.$_COOKIE['where'];
 				 }
 				 else
 				 {
 				 
-			$sql = $sql . $tipo[$i-2] . "='" . $tipo[$i-1] . "' ";
+			$sql = $sql ." WHERE ". $tipo[$i-2] . "='" . $tipo[$i-1] . "' ";
 			}
 				
 				$row=mysqli_query($conn,$sql);	
 				$stringa=" ";	
 				while($a=mysqli_fetch_row($row)){
-					$stringa=$stringa . $a[0];
+					$i = 0;
+					while($i<count($tipo)/2){
+						$stringa=$stringa .",". $a[$i];
+						$i++;
+					}
 				}
 			   setcookie("b", $stringa , time()+3600, "/Alumni/");
 			    switch ($_COOKIE['tipo_utente']){
@@ -178,8 +182,8 @@
 					case "moderatore":
 				          break;
 				
-					case default:
-					   setcookie('tipo_utente','ciao',time()-1);
+				 default:
+					   setcookie("tipo_utente","ciao",time()-1, "/Alumni/");
 				          break;
 				
 				}
