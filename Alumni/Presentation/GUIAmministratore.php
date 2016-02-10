@@ -12,6 +12,8 @@
 <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="../js/script.js"></script>
 <script type="text/javascript" src="../js/coin-slider.min.js"></script>
+
+
 <script LANGUAGE="JavaScript">
     <!-- 
     function openWindow()
@@ -37,14 +39,20 @@
 .style10 {
 	color: #585757;
 }
+.style11 {
+	
+	text-align: center;
+	font-weight: bold;
+	
+}
 </style>
 
 </head>
-<body>
+<body onload= "stampa('1','../Application/Amministratore.php','mod41');stampa('2','../Application/Amministratore.php','mod42');stampa('0','../Application/Amministratore.php','mod42');stampa('3','../Application/Amministratore.php','mod43');stampa('0','../Application/Amministratore.php','mod43');">
 <!--Corpo della pagina-->
 
 <!--Controllo validità login-->
-<div id='mod43'></div>
+<div id='mod40'></div>
 
 <div class="Intestazione" style="width: 100%; height: 20px"><!--Primo blocco:intestazione->Logo ed immagini-->
   </div>
@@ -89,15 +97,15 @@
         <div class="gadget">
         <div><div><strong><span class="style9">AMMINISTRATORE<a NAME="s" ></a></span></strong><br /><br />
         	
-			<div id='mod44'></div>
+			<div id='mod41'></div>
 <br />
           <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
           
-		  <div id='mod45'></div>
+		  <div id='mod42' class="style11"></div>
 		  
 		  <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		  
-		  <div id='mod46'></div>
+		  <div id='mod43' class="style11"></div>
 		  <br /></strong><br /><br /><br /><br />
 			</div> 
 			</div>
