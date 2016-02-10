@@ -12,6 +12,7 @@
 <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="../js/script.js"></script>
 <script type="text/javascript" src="../js/coin-slider.min.js"></script>
+<script type="text/javascript" src="../js/inviavalore.js"></script>
 <style type="text/css">
 .style5 {
 	color: #FFFFFF;
@@ -35,7 +36,7 @@
 }
 </style>
 </head>
-<body>
+<body onload="stampa('0','../Application/CercaAlumno.php','mod53')">
 <!--Corpo della pagina-->
 
 <div id='mod52'></div>			
@@ -77,11 +78,11 @@
 
       <div class="sidebar" style="right: 50px; top: -14px" ><!--Pannello laterale, inerente allo specifico utente loggato ed alle sue funzionalità  -->
           <div class="searchform"><!--Funzionalità di ricerca-->
-          <form id="formsearch" name="formsearch" method="post" action="GUICercaAlumno.php#s">
+          <form id="formsearch" name="formsearch">
             <span>
-            <input name="ricerca" class="editbox_search" id="editbox_search" maxlength="80" placeholder="Cerca Alumno:" type="text" />
+            <input id="ricerca" name="ricerca" class="editbox_search" id="editbox_search" maxlength="80" placeholder="Cerca Alumno:" type="text" />
             </span>
-            <input name="button_search" src="../images/search.gif" class="button_search" type="image" />
+            <input name="button_search" src="../images/search.gif" class="button_search" type="image" onclick="stampa(document.getElementById('ricerca').value,'../Application/CercaAlumno.php','mod53')" />
           </form>
         </div>
         <div class="clr"></div>
