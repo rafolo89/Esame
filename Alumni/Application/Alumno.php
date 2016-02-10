@@ -3,13 +3,13 @@
  			header("Location: ../GUISito.php#s"); 
       }
  $path="../Application/".basename($_SERVER['PHP_SELF']);
- 
+ setcookie("file","../Presentation/provaprova.php", time()+3600, "/Alumni/");
  			 
 	if($_GET['valore']==0){
 		
 			
- 			$row= $_COOKIE['b'];
-			echo $row;
+ 			$row= explode("," , $_COOKIE['b']);
+			echo $row[1];
  			setcookie("b","ciao",time()-1,"/Alumni/");
 	}
 
@@ -20,15 +20,15 @@
               
  if($_GET['valore']==2){
 	 
-			 setcookie("tipo","NOME= Orsi ,ID= ".$_COOKIE['id_utente']."", time()+3600, "/Alumni/");
-  			 setcookie("scelta","visualizza", time()+3600, "/Alumni/");
+			 setcookie("tipo","NOME= Orsi, ID= ".$_COOKIE['id_utente']."", time()+3600, "/Alumni/");
+  			 setcookie("valore","visualizza", time()+3600, "/Alumni/");
 			 header("Location: ../Storage/Storage.php");
  			
 			 }
 			 
   if($_GET['valore']==3){
- 			 setcookie("tipo","COGNOME= Orsi ,ID= ".$_COOKIE['id_utente']."", time()+3600, "/Alumni/");
-  			 setcookie("scelta","visualizza", time()+3600, "/Alumni/");
+ 			 setcookie("tipo","COGNOME= Orsi, ID= ".$_COOKIE['id_utente']."", time()+3600, "/Alumni/");
+  			 setcookie("valore","visualizza", time()+3600, "/Alumni/");
 			 header("Location: ../Storage/Storage.php");
 			 
 			 }
