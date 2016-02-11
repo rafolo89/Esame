@@ -31,32 +31,27 @@
 
 		 
               
-			if($_GET['valore']!=0){
+			if($_GET['valore']!='0'){
 				
-				 setcookie("file","boh" , time()+3600, "/Alumni/");
+				 
 				 setcookie("tipo_utente","alumno" , time()+3600, "/Alumni/");
-				 setcookie("tipo"," WHERE NOME= Orsi, COGNOME= We, ID= 2" , time()+3600, "/Alumni/");
+				 setcookie("tipo","NOME= Orsi, COGNOME= We, ID= 2" , time()+3600, "/Alumni/");
 				 setcookie("valore","visualizza", time()+3600, "/Alumni/");
 				 $u=explode(" " , $_GET['valore']);
 				 if(count($u)==2){
 					 
-					setcookie("where","NOME= '" . $u[0] . "' || COGNOME= '" . $u[1] . "' ", time()+3600, "/Alumni/");
+					setcookie("where"," WHERE NOME= '" . $u[0] . "' || COGNOME= '" . $u[1] . "' ", time()+3600, "/Alumni/");
 				 }
 				 else{
 					 
-					 setcookie("where","NOME= '" . $u[0] . "' || COGNOME= '" . $u[0] . "' ", time()+3600, "/Alumni/");
+					 setcookie("where"," WHERE NOME= '" . $u[0] . "' || COGNOME= '" . $u[0] . "' ", time()+3600, "/Alumni/");
 
 				 }
 				 header("Location: ../Storage/Storage.php");
- 			
+				
 			 }
 			 
-			if(!isset($_GET['valore'])){
- 			 
-			   setcookie("file","boh" , time()-1, "/Alumni/");
-			   header("Location: ../Presentation/GUICercaAlumno.php");
-			 
-			}
+		
 
 	
 	

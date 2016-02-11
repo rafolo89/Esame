@@ -187,9 +187,7 @@
 				          break;
 				
 				}
-				if($_COOKIE['file']=="boh"){
-					header("Location: ../Application/CercaAlumno.php");
-				}
+				
 			
 			
 		}

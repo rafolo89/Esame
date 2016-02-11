@@ -36,7 +36,7 @@
 }
 </style>
 </head>
-<body onload="stampa('0','../Application/CercaAlumno.php','mod53')">
+<body>
 <!--Corpo della pagina-->
 
 <div id='mod52'></div>			
@@ -78,12 +78,12 @@
 
       <div class="sidebar" style="right: 50px; top: -14px" ><!--Pannello laterale, inerente allo specifico utente loggato ed alle sue funzionalità  -->
           <div class="searchform"><!--Funzionalità di ricerca-->
-          <form id="formsearch" name="formsearch">
+          <div id="formsearch" name="formsearch">
             <span>
             <input id="ricerca" name="ricerca" class="editbox_search" id="editbox_search" maxlength="80" placeholder="Cerca Alumno:" type="text" />
             </span>
-            <input name="button_search" src="../images/search.gif" class="button_search" type="image" onclick="stampa(document.getElementById('ricerca').value,'../Application/CercaAlumno.php','mod53')" />
-          </form>
+            <input name="button_search" src="../images/search.gif" class="button_search" type="image" onclick="stampa(document.getElementById('ricerca').value,'../Application/CercaAlumno.php','mod53');stampa('0','../Application/CercaAlumno.php','mod53');" />
+          </div>
         </div>
         <div class="clr"></div>
         <div class="gadget">
